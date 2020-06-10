@@ -16,7 +16,7 @@ RSpec.describe SongsController, type: :controller do
       title: nil,
       artist_name: nil,
       release_year: nil,
-      released: true
+      release: true
     }
   end
 
