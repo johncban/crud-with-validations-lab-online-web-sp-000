@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
-  get 'songs/index'
+  get '/songs', to: 'songs#index'
+  get '/songs/new', to: 'songs#new', as: 'new_song'
+  post '/songs', to: 'songs#create'
+  get '/songs/:id', to: 'songs#show', as: 'song'
+  get '/songs/:id/edit', to: 'songs#edit', as: 'edit_song'
+  patch '/songs/:id', to: 'songs#update'
+  delete '/songs/:id', to: 'songs#destroy'
 
-  get 'songs/new'
-
-  get 'songs/edit'
-
-  get 'songs/show'
-
-  get 'songs/_form'
-
-  delete 'songs/:id', to: 'songs#destroy'
-
-  resources :songs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'songs#index'
 end
